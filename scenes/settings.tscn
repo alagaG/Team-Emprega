@@ -1,0 +1,188 @@
+[gd_scene load_steps=25 format=3 uid="uid://bk4mh7oot7a0h"]
+
+[ext_resource type="FontFile" uid="uid://enktmyslmgte" path="res://resources/fonts/PearSoda.ttf" id="1_f52ii"]
+[ext_resource type="Texture2D" uid="uid://cylosnfglry3d" path="res://resources/textures/hud/note_icon.png" id="2_pa4p4"]
+[ext_resource type="Texture2D" uid="uid://gw4hbed4xcuv" path="res://resources/textures/hud/slider_grabber.png" id="3_smgdw"]
+[ext_resource type="Texture2D" uid="uid://cyh2x4184oanv" path="res://resources/textures/hud/slider_grabber_highlight.png" id="4_i5pi0"]
+[ext_resource type="Texture2D" uid="uid://xjd3oqmd8d7p" path="res://resources/textures/hud/slider_grabber_disable.png" id="5_lbdbh"]
+[ext_resource type="Texture2D" uid="uid://dwkvooljsdhk5" path="res://resources/textures/hud/sound_icon.png" id="6_fcikw"]
+[ext_resource type="Texture2D" uid="uid://dgpkxgdp0ycx7" path="res://resources/textures/hud/check_box.png" id="7_yxk2v"]
+[ext_resource type="Texture2D" uid="uid://d0s24b7aomual" path="res://resources/textures/hud/check_box_disable.png" id="8_r77o7"]
+[ext_resource type="Texture2D" uid="uid://y2suufukwe7u" path="res://resources/textures/hud/uncheck_box.png" id="9_e3oh3"]
+[ext_resource type="Texture2D" uid="uid://cv1fqy2cht4ea" path="res://resources/textures/hud/uncheck_box_disable.png" id="10_vor0a"]
+[ext_resource type="Texture2D" uid="uid://bvvlritbfr2df" path="res://resources/textures/hud/button_normal.png" id="11_4t15b"]
+[ext_resource type="Texture2D" uid="uid://dul6v5osubpfw" path="res://resources/textures/hud/button_hover.png" id="12_2k0v2"]
+[ext_resource type="Texture2D" uid="uid://yx2txqanjk6j" path="res://resources/textures/hud/button_disabled.png" id="13_jomjp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jtvmn"]
+font = ExtResource("1_f52ii")
+font_size = 32
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_x2q75"]
+color = Color(0.176471, 0.180392, 0.321569, 1)
+thickness = 5
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_iwas0"]
+color = Color(0.603922, 0.607843, 0.678431, 1)
+thickness = 4
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_6t8qg"]
+color = Color(1, 0.992157, 0.929412, 1)
+thickness = 4
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_asiom"]
+color = Color(0.176471, 0.180392, 0.321569, 1)
+thickness = 5
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_alwtx"]
+color = Color(0.603922, 0.607843, 0.678431, 1)
+thickness = 4
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_pfq4h"]
+color = Color(1, 0.992157, 0.929412, 1)
+thickness = 4
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ypnm8"]
+texture = ExtResource("11_4t15b")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ua2q8"]
+texture = ExtResource("12_2k0v2")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fjo1e"]
+texture = ExtResource("13_jomjp")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_glmbu"]
+texture = ExtResource("13_jomjp")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[node name="SettingsMenu" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.329412, 0.333333, 0.439216, 1)
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Title" type="Label" parent="Margin/VBox"]
+layout_mode = 2
+text = "Configurações"
+label_settings = SubResource("LabelSettings_jtvmn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sep" type="HSeparator" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Margin" type="MarginContainer" parent="Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Center" type="CenterContainer" parent="Margin/VBox/Margin"]
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="Margin/VBox/Margin/Center"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Left" type="VBoxContainer" parent="Margin/VBox/Margin/Center/HBox"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="MusicBox" type="HBoxContainer" parent="Margin/VBox/Margin/Center/HBox/Left"]
+layout_mode = 2
+
+[node name="MusicIcon" type="TextureRect" parent="Margin/VBox/Margin/Center/HBox/Left/MusicBox"]
+layout_mode = 2
+texture = ExtResource("2_pa4p4")
+
+[node name="MusicScroller" type="HSlider" parent="Margin/VBox/Margin/Center/HBox/Left/MusicBox"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_icons/grabber = ExtResource("3_smgdw")
+theme_override_icons/grabber_highlight = ExtResource("4_i5pi0")
+theme_override_icons/grabber_disabled = ExtResource("5_lbdbh")
+theme_override_styles/slider = SubResource("StyleBoxLine_x2q75")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_iwas0")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_6t8qg")
+rounded = true
+
+[node name="SoundBox" type="HBoxContainer" parent="Margin/VBox/Margin/Center/HBox/Left"]
+layout_mode = 2
+
+[node name="SoundIcon" type="TextureRect" parent="Margin/VBox/Margin/Center/HBox/Left/SoundBox"]
+layout_mode = 2
+texture = ExtResource("6_fcikw")
+
+[node name="SoundScroller" type="HSlider" parent="Margin/VBox/Margin/Center/HBox/Left/SoundBox"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_icons/grabber = ExtResource("3_smgdw")
+theme_override_icons/grabber_highlight = ExtResource("4_i5pi0")
+theme_override_icons/grabber_disabled = ExtResource("5_lbdbh")
+theme_override_styles/slider = SubResource("StyleBoxLine_asiom")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_alwtx")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_pfq4h")
+
+[node name="Right" type="VBoxContainer" parent="Margin/VBox/Margin/Center/HBox"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FullScreen" type="CheckBox" parent="Margin/VBox/Margin/Center/HBox/Right"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_f52ii")
+theme_override_font_sizes/font_size = 16
+theme_override_icons/checked = ExtResource("7_yxk2v")
+theme_override_icons/checked_disabled = ExtResource("8_r77o7")
+theme_override_icons/unchecked = ExtResource("9_e3oh3")
+theme_override_icons/unchecked_disabled = ExtResource("10_vor0a")
+text = "Tela Cheia"
+
+[node name="ExitButton" type="Button" parent="Margin/VBox/Margin/Center/HBox/Right"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_f52ii")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_ypnm8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ua2q8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fjo1e")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_glmbu")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ua2q8")
+text = "Voltar"

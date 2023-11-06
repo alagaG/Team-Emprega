@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="PlayerData" load_steps=2 format=3 uid="uid://dvbnhhpp0v47w"]
+
+[ext_resource type="Script" path="res://code/resource/player_data.gd" id="1_vq44f"]
+
+[resource]
+script = ExtResource("1_vq44f")
+walk_speed = 0
+jump_speed = 0

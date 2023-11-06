@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="PlayerData" load_steps=11 format=3 uid="uid://cgovw7c1axjm0"]
+
+[ext_resource type="Script" path="res://code/resource/player_data.gd" id="1_u1aul"]
+[ext_resource type="Texture2D" uid="uid://5yfatadst4vy" path="res://resources/textures/player/player_extrovert_idle.png" id="1_v3lch"]
+[ext_resource type="Texture2D" uid="uid://dbnmnecow0u2k" path="res://resources/textures/player/player_extrovert_walk1.png" id="2_2fgg6"]
+[ext_resource type="Texture2D" uid="uid://b81ly8vkkpt2c" path="res://resources/textures/player/player_extrovert_fall1.png" id="2_s5vgg"]
+[ext_resource type="Texture2D" uid="uid://c8g6vvliedki1" path="res://resources/textures/player/player_extrovert_walk2.png" id="3_5jb2d"]
+[ext_resource type="Texture2D" uid="uid://byrhmdr43xcg8" path="res://resources/textures/player/player_extrovert_fall2.png" id="3_odj6p"]
+[ext_resource type="Texture2D" uid="uid://brmukqbgka6l0" path="res://resources/textures/player/player_extrovert_walk3.png" id="4_8sya8"]
+[ext_resource type="Texture2D" uid="uid://b1fhk8a6q1wbj" path="res://resources/textures/player/player_extrovert_fall3.png" id="4_i80jq"]
+[ext_resource type="Texture2D" uid="uid://d4ng4eifl6emi" path="res://resources/textures/player/player_extrovert_walk4.png" id="5_ebvxl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3dth0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_v3lch")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_s5vgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_odj6p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_i80jq")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2fgg6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5jb2d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8sya8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ebvxl")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 12.0
+}]
+
+[resource]
+script = ExtResource("1_u1aul")
+animations = SubResource("SpriteFrames_3dth0")
+introvert = false
+input_key = "p1"
+walk_speed = 150
+jump_speed = -225

@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="PlayerData" load_steps=11 format=3 uid="uid://ddexjogi2j2ix"]
+
+[ext_resource type="Texture2D" uid="uid://yanbkmqqir1p" path="res://resources/textures/player/player_introvert_idle.png" id="1_e3dfr"]
+[ext_resource type="Script" path="res://code/resource/player_data.gd" id="1_qx8t7"]
+[ext_resource type="Texture2D" uid="uid://bkxymrhdewfyj" path="res://resources/textures/player/player_introvert_fall1.png" id="2_o80jh"]
+[ext_resource type="Texture2D" uid="uid://503lglkm80hg" path="res://resources/textures/player/player_introvert_walk1.png" id="3_46rjc"]
+[ext_resource type="Texture2D" uid="uid://v8chqx6lxbyu" path="res://resources/textures/player/player_introvert_fall2.png" id="3_oq6x2"]
+[ext_resource type="Texture2D" uid="uid://lmlb3rwu0ytt" path="res://resources/textures/player/player_introvert_fall3.png" id="4_icdux"]
+[ext_resource type="Texture2D" uid="uid://dq0trovp22c7t" path="res://resources/textures/player/player_introvert_walk2.png" id="4_xwio0"]
+[ext_resource type="Texture2D" uid="uid://bnftsdtq71v3" path="res://resources/textures/player/player_introvert_walk3.png" id="5_216wq"]
+[ext_resource type="Texture2D" uid="uid://c61wwd0fkn767" path="res://resources/textures/player/player_introvert_walk4.png" id="6_afaa2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y4gfv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_e3dfr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o80jh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_oq6x2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_icdux")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_46rjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xwio0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_216wq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_afaa2")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 12.0
+}]
+
+[resource]
+script = ExtResource("1_qx8t7")
+animations = SubResource("SpriteFrames_y4gfv")
+introvert = true
+input_key = "p2"
+walk_speed = 100
+jump_speed = -300
