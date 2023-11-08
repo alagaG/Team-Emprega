@@ -1,0 +1,111 @@
+[gd_scene load_steps=6 format=3 uid="uid://djjgqohjcb4p4"]
+
+[ext_resource type="Script" path="res://scenes/credits.gd" id="1_psy6q"]
+[ext_resource type="FontFile" uid="uid://enktmyslmgte" path="res://resources/fonts/PearSoda.ttf" id="2_7k1gf"]
+[ext_resource type="Texture2D" uid="uid://cibgyg2g6qr5k" path="res://resources/textures/hud/ButtonCase.png" id="3_yg4ab"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rdqaa"]
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fvsp5"]
+texture = ExtResource("3_yg4ab")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
+[node name="Credits" type="ColorRect" node_paths=PackedStringArray("exit")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.329412, 0.333333, 0.439216, 1)
+script = ExtResource("1_psy6q")
+exit = NodePath("CenterContainer/VBoxContainer/Button")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Programmers" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/Programmers"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_7k1gf")
+text = "Programação"
+label_settings = SubResource("LabelSettings_rdqaa")
+horizontal_alignment = 1
+
+[node name="Credits" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/Programmers"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_7k1gf")
+text = "Matheus
+Caique"
+horizontal_alignment = 1
+
+[node name="Designers" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/Designers"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_7k1gf")
+text = "Level Design
+"
+label_settings = SubResource("LabelSettings_rdqaa")
+horizontal_alignment = 1
+
+[node name="Credits" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/Designers"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_7k1gf")
+text = "Giovanna
+Daniel"
+horizontal_alignment = 1
+
+[node name="Artists" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/Artists"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_7k1gf")
+text = "Arte
+"
+label_settings = SubResource("LabelSettings_rdqaa")
+horizontal_alignment = 1
+
+[node name="Credits" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/Artists"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_7k1gf")
+text = "Giovanna
+Luiz"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_7k1gf")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_fvsp5")
+text = "Exit
+"

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="NPCData" load_steps=4 format=3 uid="uid://bpbvpp5h1lgl7"]
+
+[ext_resource type="Texture2D" uid="uid://cwkfta1jk462t" path="res://resources/textures/fase2/security.png" id="1_ojam8"]
+[ext_resource type="Script" path="res://code/resource/npc_data.gd" id="2_cq3oo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qknvo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ojam8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("2_cq3oo")
+animation = SubResource("SpriteFrames_qknvo")
+dialog = PackedStringArray("Você vai para uma entrevista? Boa sorte", "Cuidado na aparência, precisa estar formal para a entrevista", "Emprego é coisa séria")

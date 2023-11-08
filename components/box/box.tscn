@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://p62nopxpk7of"]
+
+[ext_resource type="Script" path="res://components/box/box.gd" id="1_qyqgn"]
+[ext_resource type="Texture2D" uid="uid://5jq3s2c6qq43" path="res://resources/textures/push_action.png" id="2_buoeq"]
+
+[node name="Box" type="CharacterBody2D"]
+script = ExtResource("1_qyqgn")
+distance = null
+
+[node name="Sprite" type="Sprite2D" parent="."]
+
+[node name="ActionHint" type="Sprite2D" parent="."]
+texture = ExtResource("2_buoeq")

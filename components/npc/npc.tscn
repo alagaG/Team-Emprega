@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://dltbps00erdkm"]
+
+[ext_resource type="Script" path="res://components/npc/npc.gd" id="1_7k7vs"]
+[ext_resource type="Texture2D" uid="uid://biyca615qbtj2" path="res://resources/textures/extrovert_action.png" id="2_6xc6s"]
+[ext_resource type="Texture2D" uid="uid://cwug6fem4k1lr" path="res://resources/textures/hud/panel.png" id="3_q4lao"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ckj3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4l8c8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n4l20"]
+texture = ExtResource("3_q4lao")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[node name="NPC" type="Area2D"]
+script = ExtResource("1_7k7vs")
+flip = null
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5ckj3")
+autoplay = "default"
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4l8c8")
+
+[node name="ActionHint" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -17)
+texture = ExtResource("2_6xc6s")
+
+[node name="Panel" type="PanelContainer" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -26.0
+offset_right = 15.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_n4l20")
+
+[node name="Margin" type="MarginContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 0
+
+[node name="Label" type="Label" parent="Panel/Margin"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Ah, oi!"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bji7wru27com8"]
+
+[ext_resource type="PackedScene" uid="uid://dltbps00erdkm" path="res://components/npc/npc.tscn" id="1_g45t2"]
+[ext_resource type="Texture2D" uid="uid://c14saethw5iyq" path="res://resources/textures/tutorial/mother_idle1.png" id="2_jr8o6"]
+[ext_resource type="Resource" uid="uid://cmr45fdlbv7cs" path="res://resources/npc_data/mother.tres" id="2_qorqn"]
+[ext_resource type="Texture2D" uid="uid://bp6g3242ch0uy" path="res://resources/textures/tutorial/mother_idle2.png" id="3_nhxcs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cmpr4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jr8o6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nhxcs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="MotherNPC" instance=ExtResource("1_g45t2")]
+data = ExtResource("2_qorqn")
+
+[node name="Sprite" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_cmpr4")
+flip_h = true
+
+[node name="Shape" parent="." index="1"]
+position = Vector2(-0.25, 1.75)
+
+[node name="Panel" parent="." index="3"]
+offset_top = -27.0
+offset_bottom = -12.0
+
+[node name="Label" parent="Panel/Margin" index="0"]
+text = "Não esqueça a mochila, filho."

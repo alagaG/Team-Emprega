@@ -1,0 +1,226 @@
+[gd_scene load_steps=14 format=3 uid="uid://ds5av2ln1x1pv"]
+
+[ext_resource type="Script" path="res://scenes/levels/level3/questions.gd" id="1_aqwjh"]
+[ext_resource type="Texture2D" uid="uid://dvjf00v1gkpil" path="res://resources/textures/background/fase3.png" id="1_sq65h"]
+[ext_resource type="TileSet" uid="uid://vpjngj005lta" path="res://resources/tile_set/default.tres" id="2_dlq13"]
+[ext_resource type="Texture2D" uid="uid://cfi6agssbi1qk" path="res://resources/textures/background/sky.png" id="3_q4vo7"]
+[ext_resource type="Texture2D" uid="uid://5yfatadst4vy" path="res://resources/textures/player/player_extrovert_idle.png" id="4_gxdgf"]
+[ext_resource type="Texture2D" uid="uid://yanbkmqqir1p" path="res://resources/textures/player/player_introvert_idle.png" id="5_aufm3"]
+[ext_resource type="Texture2D" uid="uid://cwug6fem4k1lr" path="res://resources/textures/hud/panel.png" id="6_j3axu"]
+[ext_resource type="Texture2D" uid="uid://doeihwet6jt6v" path="res://resources/textures/fase3/teacher.png" id="6_tdhu6"]
+[ext_resource type="Script" path="res://scenes/levels/level1/spawn_point.gd" id="9_fe4fv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a6glg"]
+texture = ExtResource("6_j3axu")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="Animation" id="Animation_f4wcd"]
+resource_name = "question 1"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.1, 0, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Button3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qoyqi"]
+_data = {
+"question 1": SubResource("Animation_f4wcd")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xkvjr"]
+texture = ExtResource("6_j3axu")
+
+[node name="Questions" type="Node" node_paths=PackedStringArray("btn_a", "btn_b", "btn_c", "answer", "answer_label", "question", "question_label")]
+script = ExtResource("1_aqwjh")
+btn_a = NodePath("Button")
+btn_b = NodePath("Button2")
+btn_c = NodePath("Button3")
+answer = NodePath("PlayerOne/Answer")
+answer_label = NodePath("PlayerOne/Answer/Margin/Label")
+question = NodePath("Question")
+question_label = NodePath("Question/Margin/Label")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_q4vo7")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_sq65h")
+centered = false
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_dlq13")
+format = 2
+layer_0/tile_data = PackedInt32Array(851968, 1, 0, 851969, 1, 0, 851970, 1, 0, 851971, 1, 0, 851972, 1, 0, 851973, 1, 0, 851974, 1, 0, 851975, 1, 0, 851976, 1, 0, 851977, 1, 0, 851978, 1, 0, 851979, 1, 0, 851980, 1, 0, 851981, 1, 0, 851982, 1, 0, 851983, 1, 0, 851984, 1, 0, 851985, 1, 0, 851986, 1, 0, 851987, 1, 0, 917504, 65537, 0, 917505, 65537, 0, 917506, 65537, 0, 917507, 65537, 0, 917508, 65537, 0, 917509, 65537, 0, 917510, 65537, 0, 917511, 65537, 0, 917512, 65537, 0, 917513, 65537, 0, 917514, 65537, 0, 917515, 65537, 0, 917516, 65537, 0, 917517, 65537, 0, 917518, 65537, 0, 917519, 65537, 0, 917520, 65537, 0, 917521, 65537, 0, 917522, 65537, 0, 917523, 131073, 0, 589824, 65537, 0, 589825, 65537, 0, 589826, 65537, 0, 589827, 65537, 0, 589828, 65537, 0, 589829, 65537, 0, 589830, 65537, 0, 589831, 65537, 0, 589832, 65537, 0, 589833, 65537, 0, 589834, 65537, 0, 589835, 65537, 0, 589836, 65537, 0, 589837, 65537, 0, 589838, 65537, 0, 589839, 65537, 0, 589840, 65537, 0, 589841, 65537, 0, 589842, 65537, 0, 589843, 131073, 0, 524307, 1, 0, 524306, 1, 0, 524305, 1, 0, 524304, 1, 0, 524303, 1, 0, 524302, 1, 0, 524301, 1, 0, 524300, 1, 0, 524299, 1, 0, 524298, 1, 0, 524297, 1, 0, 524296, 1, 0, 524295, 1, 0, 524294, 1, 0, 524293, 1, 0, 524292, 1, 0, 524291, 1, 0, 524290, 1, 0, 524289, 1, 0, 524288, 1, 0, 262142, 1, 65537, 327678, 1, 65537, 393214, 1, 65537, 458750, 1, 65537, 524286, 1, 65537, 589822, 1, 65537, 655358, 1, 65537, 720894, 1, 65537, 786430, 1, 65537, 851966, 1, 65537, 917502, 1, 65537, 983038, 1, 65537, 1048574, 1, 65537, 1114110, 1, 65537, 262143, 1, 1, 327679, 1, 1, 393215, 1, 1, 458751, 1, 1, 524287, 1, 1, 589823, 1, 1, 655359, 1, 1, 720895, 1, 1, 786431, 1, 1, 851967, 1, 1, 917503, 1, 1, 983039, 1, 1, 1048575, 1, 1, 1114111, 1, 1, 851988, 1, 0, 851989, 1, 0, 851990, 1, 0, 851991, 1, 0, 524308, 1, 0, 524309, 1, 0, 524310, 1, 0, 524311, 1, 0, 524312, 1, 0, 917524, 65537, 0, 917525, 65537, 0, 917526, 65537, 0, 917527, 131073, 0, 917528, 65537, 0, 917529, 65537, 0, 917530, 65537, 0, 589844, 65537, 0, 589845, 65537, 0, 589846, 65537, 0, 589847, 65537, 0, 589848, 65537, 0, 983059, 131073, 1, 983063, 131073, 1, 655379, 131073, 1)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(123, 172)
+
+[node name="PlayerOne" type="Sprite2D" parent="."]
+position = Vector2(88, 196)
+texture = ExtResource("4_gxdgf")
+
+[node name="Answer" type="PanelContainer" parent="PlayerOne"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = -46.0
+offset_right = -9.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_a6glg")
+
+[node name="Margin" type="MarginContainer" parent="PlayerOne/Answer"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 0
+
+[node name="Label" type="Label" parent="PlayerOne/Answer/Margin"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerTwo" type="Sprite2D" parent="."]
+position = Vector2(69, 196)
+texture = ExtResource("5_aufm3")
+
+[node name="Teacher" type="Sprite2D" parent="."]
+position = Vector2(143, 196)
+texture = ExtResource("6_tdhu6")
+flip_h = true
+
+[node name="Animator" type="AnimationPlayer" parent="."]
+autoplay = "question 1"
+libraries = {
+"": SubResource("AnimationLibrary_qoyqi")
+}
+
+[node name="Question" type="PanelContainer" parent="."]
+offset_left = 128.0
+offset_top = 98.0
+offset_right = 238.0
+offset_bottom = 177.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_a6glg")
+
+[node name="Margin" type="MarginContainer" parent="Question"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 0
+
+[node name="Label" type="Label" parent="Question/Margin"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Vejamos seus currículos...
+Qual sua fraqueza?
+A) Ser o Melhor
+B) Luto pra Focar
+C) Infelizmente, ser Feio"
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -63.0
+offset_top = -59.0
+offset_right = -50.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_xkvjr")
+text = "A"
+
+[node name="Button2" type="Button" parent="."]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -63.0
+offset_top = -38.0
+offset_right = -50.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_xkvjr")
+text = "B"
+
+[node name="Button3" type="Button" parent="."]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -63.0
+offset_top = -16.0
+offset_right = -50.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_xkvjr")
+text = "C"
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+script = ExtResource("9_fe4fv")
+
+[node name="Entities" type="Node2D" parent="."]

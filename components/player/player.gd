@@ -8,6 +8,7 @@ extends CharacterBody2D
 	set = set_data
 # Nodes
 @onready var sprite : AnimatedSprite2D = $Sprite
+@onready var tp_cd : Timer = $TPColdown
 # Vars
 const DEFAULT_DATA : PlayerData = preload("res://resources/player_data/default.tres")
 var walk_speed : int = 0
@@ -33,6 +34,13 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction.
 	var direction = Input.get_axis("%s_left" % data.input_key, "%s_right" % data.input_key)
 	velocity.x = direction * walk_speed
+	
+	var check = move_and_collide(Vector2(velocity.x * delta, 0), true)
+	if check != null:
+		var collider = check.get_collider()
+		if collider != null and collider is Box and is_extrovert():
+			collider.velocity.x = velocity.x / 4
+	
 	move_and_slide()
 	
 	if not is_node_ready(): return
@@ -58,3 +66,20 @@ func set_data(value:PlayerData) -> void:
 	jump_speed = data.jump_speed
 	if is_node_ready():
 		sprite.sprite_frames = data.animations
+
+
+func teleport(pos:Vector2) -> void:
+	position = pos + Vector2(-10 + 20 if is_extrovert() else 0, 0)
+	tp_cd.start()
+
+
+func can_tp() -> bool:
+	return tp_cd.time_left == 0
+
+
+func is_introvert() -> bool:
+	return data.introvert
+
+
+func is_extrovert() -> bool:
+	return not data.introvert

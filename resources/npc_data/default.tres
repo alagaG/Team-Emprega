@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NPCData" load_steps=3 format=3 uid="uid://c33l7i4yvatlr"]
+
+[ext_resource type="Script" path="res://code/resource/npc_data.gd" id="1_me2rg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ckj3"]
+
+[resource]
+script = ExtResource("1_me2rg")
+animation = SubResource("SpriteFrames_5ckj3")
+dialog = PackedStringArray("Ah, oi!")

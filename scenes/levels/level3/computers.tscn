@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmvjfeujhikbr"]
+
+[ext_resource type="Script" path="res://scenes/levels/level3/computers.gd" id="1_nbtcp"]
+[ext_resource type="Texture2D" uid="uid://05ra3wlyuxrh" path="res://resources/textures/fase3/computers_on.png" id="2_3ixod"]
+[ext_resource type="Texture2D" uid="uid://p2j4nt463y60" path="res://resources/textures/fase3/computers_off.png" id="2_xotci"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q27ed"]
+size = Vector2(16, 29)
+
+[node name="Computers" type="Area2D"]
+script = ExtResource("1_nbtcp")
+texture_on = ExtResource("2_3ixod")
+texture_off = ExtResource("2_xotci")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_xotci")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+position = Vector2(62, -2.5)
+shape = SubResource("RectangleShape2D_q27ed")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwj5agxl4c5ik"]
+
+[ext_resource type="Script" path="res://components/elevator/elevator_trigger.gd" id="1_wor3w"]
+[ext_resource type="Texture2D" uid="uid://bo1v8gnt26esf" path="res://resources/textures/introvert_action.png" id="3_5egc1"]
+[ext_resource type="Texture2D" uid="uid://d3vvdo5v7lsnq" path="res://resources/textures/fase2/button.png" id="8_0xpgm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_inqbm"]
+radius = 18.0
+
+[node name="ElevatorTrigger" type="Area2D"]
+script = ExtResource("1_wor3w")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("8_0xpgm")
+
+[node name="ActionHint" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -9)
+texture = ExtResource("3_5egc1")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_inqbm")

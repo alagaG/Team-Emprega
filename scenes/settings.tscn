@@ -1,6 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://bk4mh7oot7a0h"]
+[gd_scene load_steps=26 format=3 uid="uid://bk4mh7oot7a0h"]
 
 [ext_resource type="FontFile" uid="uid://enktmyslmgte" path="res://resources/fonts/PearSoda.ttf" id="1_f52ii"]
+[ext_resource type="Script" path="res://scenes/settings.gd" id="1_q6tah"]
 [ext_resource type="Texture2D" uid="uid://cylosnfglry3d" path="res://resources/textures/hud/note_icon.png" id="2_pa4p4"]
 [ext_resource type="Texture2D" uid="uid://gw4hbed4xcuv" path="res://resources/textures/hud/slider_grabber.png" id="3_smgdw"]
 [ext_resource type="Texture2D" uid="uid://cyh2x4184oanv" path="res://resources/textures/hud/slider_grabber_highlight.png" id="4_i5pi0"]
@@ -70,7 +71,7 @@ texture_margin_top = 2.0
 texture_margin_right = 2.0
 texture_margin_bottom = 2.0
 
-[node name="SettingsMenu" type="ColorRect"]
+[node name="SettingsMenu" type="ColorRect" node_paths=PackedStringArray("music_scroller", "sound_scroller", "full_screen_box", "exit_btn")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -78,6 +79,11 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0.329412, 0.333333, 0.439216, 1)
+script = ExtResource("1_q6tah")
+music_scroller = NodePath("Margin/VBox/Margin/Center/HBox/Left/MusicBox/MusicScroller")
+sound_scroller = NodePath("Margin/VBox/Margin/Center/HBox/Left/SoundBox/SoundScroller")
+full_screen_box = NodePath("Margin/VBox/Margin/Center/HBox/Right/FullScreen")
+exit_btn = NodePath("Margin/VBox/Margin/Center/HBox/Right/ExitButton")
 
 [node name="Margin" type="MarginContainer" parent="."]
 layout_mode = 1

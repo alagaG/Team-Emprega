@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="NPCData" load_steps=5 format=3 uid="uid://cmr45fdlbv7cs"]
+
+[ext_resource type="Texture2D" uid="uid://c14saethw5iyq" path="res://resources/textures/tutorial/mother_idle1.png" id="1_4hxtm"]
+[ext_resource type="Script" path="res://code/resource/npc_data.gd" id="1_rbd7q"]
+[ext_resource type="Texture2D" uid="uid://bp6g3242ch0uy" path="res://resources/textures/tutorial/mother_idle2.png" id="2_aw2x6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cmpr4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4hxtm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_aw2x6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[resource]
+script = ExtResource("1_rbd7q")
+animation = SubResource("SpriteFrames_cmpr4")
+dialog = PackedStringArray("Não esqueça a mochila, filho.")

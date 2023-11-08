@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="NPCData" load_steps=4 format=3 uid="uid://x4ajglshtnit"]
+
+[ext_resource type="Script" path="res://code/resource/npc_data.gd" id="1_b28xd"]
+[ext_resource type="Texture2D" uid="uid://doeihwet6jt6v" path="res://resources/textures/fase3/teacher.png" id="1_nh7rr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xexsg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nh7rr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[resource]
+script = ExtResource("1_b28xd")
+animation = SubResource("SpriteFrames_xexsg")
+dialog = PackedStringArray("oi")

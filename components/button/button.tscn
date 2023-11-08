@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfar48g46gl8d"]
+
+[ext_resource type="Script" path="res://components/button/button.gd" id="1_3gesd"]
+[ext_resource type="Texture2D" uid="uid://ctvu6tgscmqw0" path="res://resources/textures/tutorial/button.png" id="1_elq74"]
+[ext_resource type="Texture2D" uid="uid://bo1v8gnt26esf" path="res://resources/textures/introvert_action.png" id="3_wp4hl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dgff"]
+
+[node name="LevelButton" type="Area2D"]
+script = ExtResource("1_3gesd")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_elq74")
+
+[node name="ActionHint" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -13)
+texture = ExtResource("3_wp4hl")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3dgff")

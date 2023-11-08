@@ -30,9 +30,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("4_icdux")
 }],
-"loop": true,
+"loop": false,
 "name": &"fall",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,

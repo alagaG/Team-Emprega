@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://dv5mrjfpaqac1"]
+
+[ext_resource type="Script" path="res://components/level/level.gd" id="1_320is"]
+[ext_resource type="Script" path="res://components/level/camera.gd" id="2_du0mv"]
+[ext_resource type="TileSet" uid="uid://vpjngj005lta" path="res://resources/tile_set/default.tres" id="2_eow4d"]
+[ext_resource type="Texture2D" uid="uid://cfi6agssbi1qk" path="res://resources/textures/background/sky.png" id="3_opdfh"]
+[ext_resource type="Script" path="res://scenes/levels/level1/spawn_point.gd" id="5_jdjwe"]
+
+[node name="Level" type="Node"]
+script = ExtResource("1_320is")
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(120, 68)
+offset = Vector2(0, -32)
+script = ExtResource("2_du0mv")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_eow4d")
+format = 2
+layer_0/name = "Ground"
+
+[node name="SecondBackground" type="ParallaxBackground" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="SecondBackground"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_opdfh")
+
+[node name="FirstBackground" type="Node2D" parent="."]
+z_index = -50
+
+[node name="FirstBackground" type="Sprite2D" parent="FirstBackground"]
+centered = false
+
+[node name="Entities" type="Node2D" parent="."]
+z_index = 50
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+script = ExtResource("5_jdjwe")
