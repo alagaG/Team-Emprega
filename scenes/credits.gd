@@ -9,4 +9,4 @@ func _ready() -> void:
 
 
 func _exit_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")Daniel
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

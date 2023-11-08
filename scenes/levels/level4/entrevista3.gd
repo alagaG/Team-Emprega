@@ -44,4 +44,4 @@ func _on_time_end() -> void:
 		files.process_mode = Node.PROCESS_MODE_DISABLED
 		result.visible = true
 		await get_tree().create_timer(2).timeout
-		get_tree().change_scene_to_file("res://scenes/congratulations.gd")
+		get_tree().change_scene_to_file("res://scenes/congratulations.tscn")
