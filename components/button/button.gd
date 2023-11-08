@@ -4,6 +4,7 @@ extends Area2D
 
 # Nodes
 @onready var sprite : Sprite2D = $Sprite
+@onready var hint : Sprite2D = $ActionHint
 # Vars
 var inside_range : bool = false
 signal activated()
@@ -15,6 +16,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	hint.visible = inside_range
 	if inside_range and Input.is_action_just_pressed("p2_act"):
 		emit_signal("activated")
 

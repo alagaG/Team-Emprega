@@ -144,7 +144,7 @@ flip = false
 
 [node name="Book0" parent="Entities" index="14" instance=ExtResource("10_chwks")]
 visible = false
-position = Vector2(24, 258)
+position = Vector2(55, 197)
 texture = ExtResource("7_ay21h")
 
 [node name="Book1" parent="Entities" index="15" instance=ExtResource("10_chwks")]
@@ -154,7 +154,7 @@ texture = ExtResource("8_ptpym")
 
 [node name="Book2" parent="Entities" index="16" instance=ExtResource("10_chwks")]
 visible = false
-position = Vector2(106, 265)
+position = Vector2(247, 187)
 texture = ExtResource("9_8w0db")
 
 [node name="Book3" parent="Entities" index="17" instance=ExtResource("10_chwks")]
@@ -169,7 +169,7 @@ texture = ExtResource("11_lwen1")
 
 [node name="Book5" parent="Entities" index="19" instance=ExtResource("10_chwks")]
 visible = false
-position = Vector2(196, 259)
+position = Vector2(120, 115)
 texture = ExtResource("12_n2muh")
 
 [node name="Computers" parent="Entities" index="20" instance=ExtResource("16_kysrv")]

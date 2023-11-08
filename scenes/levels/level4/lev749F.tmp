@@ -42,4 +42,4 @@ data = ExtResource("6_7stbt")
 flip = false
 
 [node name="SpawnPoint" parent="." index="5"]
-position = Vector2(20, 122)
+position = Vector2(17, 123)

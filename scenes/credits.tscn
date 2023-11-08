@@ -1,12 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://djjgqohjcb4p4"]
+[gd_scene load_steps=10 format=3 uid="uid://djjgqohjcb4p4"]
 
 [ext_resource type="Script" path="res://scenes/credits.gd" id="1_psy6q"]
 [ext_resource type="FontFile" uid="uid://enktmyslmgte" path="res://resources/fonts/PearSoda.ttf" id="2_7k1gf"]
 [ext_resource type="Texture2D" uid="uid://cibgyg2g6qr5k" path="res://resources/textures/hud/ButtonCase.png" id="3_yg4ab"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_2r25c"]
+font = ExtResource("2_7k1gf")
+font_size = 32
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_rdqaa"]
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_utyya"]
+line_spacing = 0.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_jgqnb"]
+line_spacing = 0.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_qqt03"]
+line_spacing = 0.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fvsp5"]
 texture = ExtResource("3_yg4ab")
@@ -35,7 +50,13 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
-theme_override_constants/separation = 16
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Créditos"
+label_settings = SubResource("LabelSettings_2r25c")
+horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -43,6 +64,7 @@ theme_override_constants/separation = 24
 
 [node name="Programmers" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="Title" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/Programmers"]
 layout_mode = 2
@@ -56,12 +78,15 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_7k1gf")
-text = "Matheus
-Caique"
+text = "Caíque Silva
+Matheus Caldas
+"
+label_settings = SubResource("LabelSettings_utyya")
 horizontal_alignment = 1
 
 [node name="Designers" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="Title" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/Designers"]
 layout_mode = 2
@@ -76,12 +101,16 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_7k1gf")
-text = "Giovanna
-Daniel"
+text = "Arthur Muricy
+Daniel Neris
+Pedro Henrique
+Victor Alexandre"
+label_settings = SubResource("LabelSettings_jgqnb")
 horizontal_alignment = 1
 
 [node name="Artists" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="Title" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/Artists"]
 layout_mode = 2
@@ -96,8 +125,9 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_7k1gf")
-text = "Giovanna
-Luiz"
+text = "Giovanna Pilon
+Luiz Fernando"
+label_settings = SubResource("LabelSettings_qqt03")
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]

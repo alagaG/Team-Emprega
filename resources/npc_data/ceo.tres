@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="NPCData" load_steps=4 format=3 uid="uid://dqwfwfuh12dgm"]
+
+[ext_resource type="Script" path="res://code/resource/npc_data.gd" id="1_qipl3"]
+[ext_resource type="Texture2D" uid="uid://dnc166dbgr6q" path="res://resources/textures/fase4/ceo.png" id="1_vt7ne"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nc6oy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vt7ne")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_qipl3")
+animation = SubResource("SpriteFrames_nc6oy")
+dialog = PackedStringArray("Vamos começar a entrevista")

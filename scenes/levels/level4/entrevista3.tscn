@@ -1,0 +1,247 @@
+[gd_scene load_steps=14 format=3 uid="uid://bbx2fj2kf6vr"]
+
+[ext_resource type="Texture2D" uid="uid://lbonv3qqajv5" path="res://resources/textures/fase4/challenge_3.png" id="1_1pemr"]
+[ext_resource type="Script" path="res://scenes/levels/level4/entrevista3.gd" id="1_gswnx"]
+[ext_resource type="Texture2D" uid="uid://ceslwulxqnfs3" path="res://resources/textures/fase4/mail_file.png" id="2_eadk1"]
+[ext_resource type="Script" path="res://scenes/levels/level4/file.gd" id="3_71oda"]
+[ext_resource type="Texture2D" uid="uid://yklfroegwm4d" path="res://resources/textures/fase4/doc_file.png" id="4_wq2kt"]
+[ext_resource type="Texture2D" uid="uid://o47i2luonbdv" path="res://resources/textures/fase4/corrupted_file.png" id="5_wu4se"]
+[ext_resource type="FontFile" uid="uid://enktmyslmgte" path="res://resources/fonts/PearSoda.ttf" id="7_xrbmk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d62ws"]
+size = Vector2(14, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pq60t"]
+size = Vector2(12, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrawv"]
+size = Vector2(11, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbvoj"]
+size = Vector2(16, 14)
+
+[sub_resource type="LabelSettings" id="LabelSettings_n41yl"]
+font = ExtResource("7_xrbmk")
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_aqn7l"]
+font = ExtResource("7_xrbmk")
+font_size = 48
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="entrevista3" type="Node" node_paths=PackedStringArray("mails", "docs", "trash_can", "time_left", "timer", "files", "result")]
+script = ExtResource("1_gswnx")
+mails = NodePath("Mails")
+docs = NodePath("Docs")
+trash_can = NodePath("TrashCan")
+time_left = NodePath("Time")
+timer = NodePath("Timer")
+files = NodePath("Files")
+result = NodePath("Result")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_1pemr")
+
+[node name="Files" type="Node" parent="."]
+process_mode = 4
+
+[node name="Mail0" type="TextureButton" parent="Files"]
+offset_left = 122.0
+offset_top = 106.0
+offset_right = 138.0
+offset_bottom = 122.0
+texture_normal = ExtResource("2_eadk1")
+script = ExtResource("3_71oda")
+
+[node name="Area2D" type="CharacterBody2D" parent="Files/Mail0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Files/Mail0/Area2D"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_d62ws")
+
+[node name="Mail1" type="TextureButton" parent="Files"]
+offset_left = 273.0
+offset_top = 101.0
+offset_right = 289.0
+offset_bottom = 117.0
+texture_normal = ExtResource("2_eadk1")
+script = ExtResource("3_71oda")
+
+[node name="Area2D" type="CharacterBody2D" parent="Files/Mail1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Files/Mail1/Area2D"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_d62ws")
+
+[node name="Mail2" type="TextureButton" parent="Files"]
+offset_left = 263.0
+offset_top = 52.0
+offset_right = 279.0
+offset_bottom = 68.0
+texture_normal = ExtResource("2_eadk1")
+script = ExtResource("3_71oda")
+
+[node name="Area2D" type="CharacterBody2D" parent="Files/Mail2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Files/Mail2/Area2D"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_d62ws")
+
+[node name="Mail3" type="TextureButton" parent="Files"]
+offset_left = 157.0
+offset_top = 122.0
+offset_right = 173.0
+offset_bottom = 138.0
+texture_normal = ExtResource("2_eadk1")
+script = ExtResource("3_71oda")
+
+[node name="Area2D" type="CharacterBody2D" parent="Files/Mail3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Files/Mail3/Area2D"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_d62ws")
+
+[node name="Doc0" type="TextureButton" parent="Files"]
+offset_left = 79.0
+offset_top = 109.0
+offset_right = 95.0
+offset_bottom = 125.0
+texture_normal = ExtResource("4_wq2kt")
+script = ExtResource("3_71oda")
+
+[node name="Area2D" type="CharacterBody2D" parent="Files/Doc0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Files/Doc0/Area2D"]
+position = Vector2(8, 9)
+shape = SubResource("RectangleShape2D_pq60t")
+
+[node name="Doc2" type="TextureButton" parent="Files"]
+offset_left = 190.0
+offset_top = 113.0
+offset_right = 206.0
+offset_bottom = 129.0
+texture_normal = ExtResource("4_wq2kt")
+script = ExtResource("3_71oda")
+
+[node name="Area2D" type="CharacterBody2D" parent="Files/Doc2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Files/Doc2/Area2D"]
+position = Vector2(8, 9)
+shape = SubResource("RectangleShape2D_pq60t")
+
+[node name="Doc3" type="TextureButton" parent="Files"]
+offset_left = 242.0
+offset_top = 84.0
+offset_right = 258.0
+offset_bottom = 100.0
+texture_normal = ExtResource("4_wq2kt")
+script = ExtResource("3_71oda")
+
+[node name="Area2D" type="CharacterBody2D" parent="Files/Doc3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Files/Doc3/Area2D"]
+position = Vector2(8, 9)
+shape = SubResource("RectangleShape2D_pq60t")
+
+[node name="Trash0" type="TextureButton" parent="Files"]
+offset_left = 35.0
+offset_top = 99.0
+offset_right = 51.0
+offset_bottom = 115.0
+texture_normal = ExtResource("5_wu4se")
+script = ExtResource("3_71oda")
+
+[node name="Area2D" type="CharacterBody2D" parent="Files/Trash0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Files/Trash0/Area2D"]
+position = Vector2(8.5, 9)
+shape = SubResource("RectangleShape2D_wrawv")
+
+[node name="Trash1" type="TextureButton" parent="Files"]
+offset_left = 291.0
+offset_top = 73.0
+offset_right = 307.0
+offset_bottom = 89.0
+texture_normal = ExtResource("5_wu4se")
+script = ExtResource("3_71oda")
+
+[node name="Area2D" type="CharacterBody2D" parent="Files/Trash1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Files/Trash1/Area2D"]
+position = Vector2(8.5, 9)
+shape = SubResource("RectangleShape2D_wrawv")
+
+[node name="Trash3" type="TextureButton" parent="Files"]
+offset_left = 242.0
+offset_top = 111.0
+offset_right = 258.0
+offset_bottom = 127.0
+texture_normal = ExtResource("5_wu4se")
+script = ExtResource("3_71oda")
+
+[node name="Area2D" type="CharacterBody2D" parent="Files/Trash3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Files/Trash3/Area2D"]
+position = Vector2(8.5, 9)
+shape = SubResource("RectangleShape2D_wrawv")
+
+[node name="Mails" type="Area2D" parent="."]
+position = Vector2(48, 40)
+
+[node name="Collision" type="CollisionShape2D" parent="Mails"]
+shape = SubResource("RectangleShape2D_qbvoj")
+
+[node name="Docs" type="Area2D" parent="."]
+position = Vector2(104, 40)
+
+[node name="Collision" type="CollisionShape2D" parent="Docs"]
+shape = SubResource("RectangleShape2D_qbvoj")
+
+[node name="TrashCan" type="Area2D" parent="."]
+position = Vector2(152, 40)
+
+[node name="Collision" type="CollisionShape2D" parent="TrashCan"]
+shape = SubResource("RectangleShape2D_qbvoj")
+
+[node name="Time" type="Label" parent="."]
+visible = false
+offset_left = 256.0
+offset_top = 4.0
+offset_right = 326.0
+offset_bottom = 30.0
+text = "10.0s"
+label_settings = SubResource("LabelSettings_n41yl")
+horizontal_alignment = 2
+
+[node name="Title" type="Label" parent="."]
+offset_left = 17.0
+offset_top = 4.0
+offset_right = 202.0
+offset_bottom = 30.0
+text = "Organize tudo dentro do tempo!"
+label_settings = SubResource("LabelSettings_n41yl")
+horizontal_alignment = 2
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.5
+one_shot = true
+
+[node name="Result" type="Label" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Concluído!"
+label_settings = SubResource("LabelSettings_aqn7l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0

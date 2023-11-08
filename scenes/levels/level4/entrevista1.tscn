@@ -1,0 +1,235 @@
+[gd_scene load_steps=21 format=3 uid="uid://chwb3faaqokjx"]
+
+[ext_resource type="Script" path="res://scenes/levels/level4/entrevista1.gd" id="1_yjse3"]
+[ext_resource type="Texture2D" uid="uid://bysdmrydvkbra" path="res://resources/textures/fase4/challenge.png" id="1_yyb7c"]
+[ext_resource type="Script" path="res://scenes/levels/level4/answer_feedback.gd" id="2_1u0ah"]
+[ext_resource type="Texture2D" uid="uid://bqibtmofjul3k" path="res://resources/textures/fase4/right.png" id="3_fqwbw"]
+[ext_resource type="Texture2D" uid="uid://cc28ed3kiusaq" path="res://resources/textures/fase4/wrong.png" id="4_rq0yf"]
+[ext_resource type="Script" path="res://scenes/levels/level4/answer.gd" id="5_irxlj"]
+[ext_resource type="Texture2D" uid="uid://brru0k2u06pai" path="res://resources/textures/fase4/answer0.png" id="6_8ulif"]
+[ext_resource type="Script" path="res://scenes/levels/level4/space.gd" id="8_4t2h3"]
+[ext_resource type="Texture2D" uid="uid://4p512rcgxtra" path="res://resources/textures/fase4/answer1.png" id="8_tevck"]
+[ext_resource type="Texture2D" uid="uid://cdw48rnj4yd4v" path="res://resources/textures/fase4/answer2.png" id="9_ou75n"]
+[ext_resource type="Texture2D" uid="uid://b7h6xeedxmrc8" path="res://resources/textures/fase4/wrong_answer0.png" id="10_qr3c1"]
+[ext_resource type="Texture2D" uid="uid://by34iv1hsn2ji" path="res://resources/textures/fase4/wrong_answer1.png" id="11_b6wgt"]
+[ext_resource type="Texture2D" uid="uid://dy0gcbbybcahx" path="res://resources/textures/fase4/wrong_answer2.png" id="12_qmnpg"]
+[ext_resource type="Texture2D" uid="uid://2l3jr0a1sfs" path="res://resources/textures/fase4/wrong_answer3.png" id="13_7dby6"]
+[ext_resource type="Texture2D" uid="uid://bdrhknl8udsv0" path="res://resources/textures/fase4/wrong_answer4.png" id="14_fulai"]
+[ext_resource type="Texture2D" uid="uid://bidsby61joges" path="res://resources/textures/fase4/wrong_answer5.png" id="15_l0qav"]
+[ext_resource type="FontFile" uid="uid://enktmyslmgte" path="res://resources/fonts/PearSoda.ttf" id="17_f38nm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0o7cj"]
+size = Vector2(11, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04f5k"]
+size = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ljbnr"]
+font_size = 48
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="entrevista1" type="Node" node_paths=PackedStringArray("space0", "space1", "space2", "answer_feedback0", "answer_feedback1", "answer_feedback2", "answers", "label")]
+script = ExtResource("1_yjse3")
+space0 = NodePath("Space0")
+space1 = NodePath("Space1")
+space2 = NodePath("Space2")
+answer_feedback0 = NodePath("AnswerFeedback0")
+answer_feedback1 = NodePath("AnswerFeedback1")
+answer_feedback2 = NodePath("AnswerFeedback2")
+answers = NodePath("Answers")
+label = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_yyb7c")
+
+[node name="AnswerFeedback0" type="Sprite2D" parent="."]
+position = Vector2(81, 58)
+centered = false
+script = ExtResource("2_1u0ah")
+right_texture = ExtResource("3_fqwbw")
+wrong_texture = ExtResource("4_rq0yf")
+
+[node name="AnswerFeedback1" type="Sprite2D" parent="."]
+position = Vector2(81, 71)
+centered = false
+script = ExtResource("2_1u0ah")
+right_texture = ExtResource("3_fqwbw")
+wrong_texture = ExtResource("4_rq0yf")
+
+[node name="AnswerFeedback2" type="Sprite2D" parent="."]
+position = Vector2(81, 84)
+centered = false
+script = ExtResource("2_1u0ah")
+right_texture = ExtResource("3_fqwbw")
+wrong_texture = ExtResource("4_rq0yf")
+
+[node name="Answers" type="Node" parent="."]
+
+[node name="Answer0" type="TextureButton" parent="Answers"]
+offset_left = 191.0
+offset_top = 71.0
+offset_right = 256.0
+offset_bottom = 81.0
+texture_normal = ExtResource("6_8ulif")
+script = ExtResource("5_irxlj")
+
+[node name="StaticBody2D" type="CharacterBody2D" parent="Answers/Answer0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Answers/Answer0/StaticBody2D"]
+position = Vector2(32.5, 4.5)
+shape = SubResource("RectangleShape2D_0o7cj")
+
+[node name="Answer1" type="TextureButton" parent="Answers"]
+offset_left = 191.0
+offset_top = 89.0
+offset_right = 236.0
+offset_bottom = 99.0
+texture_normal = ExtResource("8_tevck")
+script = ExtResource("5_irxlj")
+
+[node name="StaticBody2D" type="CharacterBody2D" parent="Answers/Answer1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Answers/Answer1/StaticBody2D"]
+position = Vector2(21, 5)
+shape = SubResource("RectangleShape2D_0o7cj")
+
+[node name="Answer2" type="TextureButton" parent="Answers"]
+offset_left = 87.0
+offset_top = 133.0
+offset_right = 120.0
+offset_bottom = 143.0
+texture_normal = ExtResource("9_ou75n")
+script = ExtResource("5_irxlj")
+
+[node name="StaticBody2D" type="CharacterBody2D" parent="Answers/Answer2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Answers/Answer2/StaticBody2D"]
+position = Vector2(16, 5)
+shape = SubResource("RectangleShape2D_0o7cj")
+
+[node name="WrongAnswer0" type="TextureButton" parent="Answers"]
+offset_left = 172.0
+offset_top = 105.0
+offset_right = 269.0
+offset_bottom = 115.0
+texture_normal = ExtResource("10_qr3c1")
+script = ExtResource("5_irxlj")
+
+[node name="StaticBody2D" type="CharacterBody2D" parent="Answers/WrongAnswer0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Answers/WrongAnswer0/StaticBody2D"]
+position = Vector2(31, 5)
+shape = SubResource("RectangleShape2D_0o7cj")
+
+[node name="WrongAnswer1" type="TextureButton" parent="Answers"]
+offset_left = 148.0
+offset_top = 140.0
+offset_right = 225.0
+offset_bottom = 150.0
+texture_normal = ExtResource("11_b6wgt")
+script = ExtResource("5_irxlj")
+
+[node name="StaticBody2D" type="CharacterBody2D" parent="Answers/WrongAnswer1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Answers/WrongAnswer1/StaticBody2D"]
+position = Vector2(29, 4)
+shape = SubResource("RectangleShape2D_0o7cj")
+
+[node name="WrongAnswer2" type="TextureButton" parent="Answers"]
+offset_left = 83.0
+offset_top = 112.0
+offset_right = 168.0
+offset_bottom = 122.0
+texture_normal = ExtResource("12_qmnpg")
+script = ExtResource("5_irxlj")
+
+[node name="StaticBody2D" type="CharacterBody2D" parent="Answers/WrongAnswer2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Answers/WrongAnswer2/StaticBody2D"]
+position = Vector2(27, 5)
+shape = SubResource("RectangleShape2D_0o7cj")
+
+[node name="WrongAnswer3" type="TextureButton" parent="Answers"]
+offset_left = 143.0
+offset_top = 89.0
+offset_right = 184.0
+offset_bottom = 99.0
+texture_normal = ExtResource("13_7dby6")
+script = ExtResource("5_irxlj")
+
+[node name="StaticBody2D" type="CharacterBody2D" parent="Answers/WrongAnswer3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Answers/WrongAnswer3/StaticBody2D"]
+position = Vector2(22, 5)
+shape = SubResource("RectangleShape2D_0o7cj")
+
+[node name="WrongAnswer4" type="TextureButton" parent="Answers"]
+offset_left = 200.0
+offset_top = 122.0
+offset_right = 258.0
+offset_bottom = 132.0
+texture_normal = ExtResource("14_fulai")
+script = ExtResource("5_irxlj")
+
+[node name="StaticBody2D" type="CharacterBody2D" parent="Answers/WrongAnswer4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Answers/WrongAnswer4/StaticBody2D"]
+position = Vector2(31, 4)
+shape = SubResource("RectangleShape2D_0o7cj")
+
+[node name="WrongAnswer5" type="TextureButton" parent="Answers"]
+offset_left = 172.0
+offset_top = 55.0
+offset_right = 270.0
+offset_bottom = 65.0
+texture_normal = ExtResource("15_l0qav")
+script = ExtResource("5_irxlj")
+
+[node name="StaticBody2D" type="CharacterBody2D" parent="Answers/WrongAnswer5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Answers/WrongAnswer5/StaticBody2D"]
+position = Vector2(28, 4)
+shape = SubResource("RectangleShape2D_0o7cj")
+
+[node name="Space0" type="Area2D" parent="." node_paths=PackedStringArray("right_answer")]
+position = Vector2(127, 64)
+script = ExtResource("8_4t2h3")
+right_answer = NodePath("../Answers/Answer0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Space0"]
+shape = SubResource("RectangleShape2D_04f5k")
+
+[node name="Space1" type="Area2D" parent="." node_paths=PackedStringArray("right_answer")]
+position = Vector2(116, 77)
+script = ExtResource("8_4t2h3")
+right_answer = NodePath("../Answers/Answer1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Space1"]
+shape = SubResource("RectangleShape2D_04f5k")
+
+[node name="Space2" type="Area2D" parent="." node_paths=PackedStringArray("right_answer")]
+position = Vector2(110, 90)
+script = ExtResource("8_4t2h3")
+right_answer = NodePath("../Answers/Answer2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Space2"]
+shape = SubResource("RectangleShape2D_04f5k")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("17_f38nm")
+text = "Concluído!"
+label_settings = SubResource("LabelSettings_ljbnr")
+horizontal_alignment = 1
+vertical_alignment = 1

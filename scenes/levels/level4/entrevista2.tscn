@@ -1,0 +1,223 @@
+[gd_scene load_steps=18 format=3 uid="uid://br20m4ue0hwle"]
+
+[ext_resource type="Texture2D" uid="uid://cfi6agssbi1qk" path="res://resources/textures/background/sky.png" id="1_k4trk"]
+[ext_resource type="Script" path="res://scenes/levels/level4/entrevista2.gd" id="1_t0rr5"]
+[ext_resource type="Texture2D" uid="uid://dnc166dbgr6q" path="res://resources/textures/fase4/ceo.png" id="2_vwom6"]
+[ext_resource type="FontFile" uid="uid://enktmyslmgte" path="res://resources/fonts/PearSoda.ttf" id="3_apgbs"]
+[ext_resource type="Texture2D" uid="uid://5yfatadst4vy" path="res://resources/textures/player/player_extrovert_idle.png" id="4_dgtl6"]
+[ext_resource type="Texture2D" uid="uid://yanbkmqqir1p" path="res://resources/textures/player/player_introvert_idle.png" id="5_u8s50"]
+[ext_resource type="Texture2D" uid="uid://dobkvgel3prtk" path="res://resources/textures/fase4/goal0.png" id="6_gwo15"]
+[ext_resource type="Texture2D" uid="uid://k5pysaomf3ny" path="res://resources/textures/fase4/fake_goal0.png" id="7_d5ws2"]
+[ext_resource type="Texture2D" uid="uid://f2yh6ddg5ph2" path="res://resources/textures/fase4/fake_goal1.png" id="8_85agu"]
+[ext_resource type="Texture2D" uid="uid://bfxn3lx14rb4g" path="res://resources/textures/fase4/goal2.png" id="9_brhkf"]
+[ext_resource type="Texture2D" uid="uid://bj2lxd6h8aoom" path="res://resources/textures/fase4/fake_goal4.png" id="10_7elq4"]
+[ext_resource type="Texture2D" uid="uid://dvl5erud84gev" path="res://resources/textures/fase4/fake_goal2.png" id="12_42r2e"]
+[ext_resource type="Texture2D" uid="uid://ci5hfinhda3an" path="res://resources/textures/fase4/goal1.png" id="13_014fh"]
+[ext_resource type="Texture2D" uid="uid://q0twsgebl306" path="res://resources/textures/fase4/fake_goal3.png" id="14_f0iik"]
+[ext_resource type="Texture2D" uid="uid://dllflj16dus1b" path="res://resources/textures/fase4/goal3.png" id="15_j5nil"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_t7oml"]
+font = ExtResource("3_apgbs")
+font_size = 8
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rswng"]
+font_size = 48
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="entrevista2" type="Node" node_paths=PackedStringArray("ceo_speak0", "ceo_speak1", "ceo_speak2", "extrovert_round_0", "extrovert_round_1", "introvert_round_0", "introvert_round_1", "label")]
+script = ExtResource("1_t0rr5")
+ceo_speak0 = NodePath("CEO/Label")
+ceo_speak1 = NodePath("CEO/Right")
+ceo_speak2 = NodePath("CEO/Wrong")
+extrovert_round_0 = NodePath("P1/Round1")
+extrovert_round_1 = NodePath("P1/Round2")
+introvert_round_0 = NodePath("P2/Round1")
+introvert_round_1 = NodePath("P2/Round2")
+label = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_k4trk")
+
+[node name="CEO" type="Sprite2D" parent="."]
+position = Vector2(70, 129)
+scale = Vector2(3, 3)
+texture = ExtResource("2_vwom6")
+
+[node name="Label" type="Label" parent="CEO"]
+offset_left = -41.6667
+offset_top = -35.0
+offset_right = 46.3333
+offset_bottom = 1.0
+text = "Quais seus 
+pontos fortes?"
+label_settings = SubResource("LabelSettings_t7oml")
+horizontal_alignment = 1
+
+[node name="Wrong" type="Label" parent="CEO"]
+visible = false
+offset_left = -41.6667
+offset_top = -35.0
+offset_right = 46.3333
+offset_bottom = 1.0
+text = "Errado!"
+label_settings = SubResource("LabelSettings_t7oml")
+horizontal_alignment = 1
+
+[node name="Right" type="Label" parent="CEO"]
+visible = false
+offset_left = -41.6667
+offset_top = -35.0
+offset_right = 46.3333
+offset_bottom = 1.0
+text = "Certo!"
+label_settings = SubResource("LabelSettings_t7oml")
+horizontal_alignment = 1
+
+[node name="P1" type="Sprite2D" parent="."]
+position = Vector2(217, 139)
+scale = Vector2(3, 3)
+texture = ExtResource("4_dgtl6")
+flip_h = true
+
+[node name="Round1" type="HBoxContainer" parent="P1"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -27.0
+offset_top = -63.3333
+offset_right = 29.0
+offset_bottom = -47.3333
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextureButton" type="TextureButton" parent="P1/Round1"]
+layout_mode = 2
+tooltip_text = "Premiado"
+texture_normal = ExtResource("6_gwo15")
+
+[node name="TextureButton2" type="TextureButton" parent="P1/Round1"]
+layout_mode = 2
+tooltip_text = "Namora"
+texture_normal = ExtResource("7_d5ws2")
+
+[node name="TextureButton3" type="TextureButton" parent="P1/Round1"]
+layout_mode = 2
+tooltip_text = "Bom de Fut"
+texture_normal = ExtResource("8_85agu")
+
+[node name="Round2" type="HBoxContainer" parent="P1"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -26.6667
+offset_top = -63.3333
+offset_right = 29.3333
+offset_bottom = -47.3333
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextureButton" type="TextureButton" parent="P1/Round2"]
+layout_mode = 2
+tooltip_text = "Ganha Corridas"
+texture_normal = ExtResource("10_7elq4")
+
+[node name="TextureButton2" type="TextureButton" parent="P1/Round2"]
+layout_mode = 2
+tooltip_text = "Tem Dinheiro"
+texture_normal = ExtResource("12_42r2e")
+
+[node name="TextureButton3" type="TextureButton" parent="P1/Round2"]
+layout_mode = 2
+tooltip_text = "Já Prestou Serviço"
+texture_normal = ExtResource("15_j5nil")
+
+[node name="P2" type="Sprite2D" parent="."]
+position = Vector2(278, 138)
+scale = Vector2(3, 3)
+texture = ExtResource("5_u8s50")
+flip_h = true
+
+[node name="Round1" type="HBoxContainer" parent="P2"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = -63.0
+offset_right = 9.0
+offset_bottom = -47.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextureButton" type="TextureButton" parent="P2/Round1"]
+layout_mode = 2
+tooltip_text = "Tem Dinheiro"
+texture_normal = ExtResource("12_42r2e")
+
+[node name="TextureButton2" type="TextureButton" parent="P2/Round1"]
+layout_mode = 2
+tooltip_text = "Estudante São Judas"
+texture_normal = ExtResource("13_014fh")
+
+[node name="TextureButton3" type="TextureButton" parent="P2/Round1"]
+layout_mode = 2
+tooltip_text = "É Briguento"
+texture_normal = ExtResource("14_f0iik")
+
+[node name="Round2" type="HBoxContainer" parent="P2"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -47.3333
+offset_top = -63.0
+offset_right = 8.66666
+offset_bottom = -47.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextureButton" type="TextureButton" parent="P2/Round2"]
+layout_mode = 2
+tooltip_text = "Bom de Fut"
+texture_normal = ExtResource("8_85agu")
+
+[node name="TextureButton2" type="TextureButton" parent="P2/Round2"]
+layout_mode = 2
+tooltip_text = "Reconhecido na Área"
+texture_normal = ExtResource("9_brhkf")
+
+[node name="TextureButton3" type="TextureButton" parent="P2/Round2"]
+layout_mode = 2
+tooltip_text = "Ganha Corridas"
+texture_normal = ExtResource("10_7elq4")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_apgbs")
+text = "Concluído!"
+label_settings = SubResource("LabelSettings_rswng")
+horizontal_alignment = 1
+vertical_alignment = 1
