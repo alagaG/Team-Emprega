@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://wouvsl6qn7yp"]
+
+[ext_resource type="AudioStream" uid="uid://dy2ccs4vq7c7q" path="res://resources/sound/soundtrack.mp3" id="1_5ifmj"]
+[ext_resource type="Script" path="res://scenes/levels/soundtrack.gd" id="2_1udek"]
+
+[node name="Soundtrack" type="AudioStreamPlayer"]
+stream = ExtResource("1_5ifmj")
+autoplay = true
+script = ExtResource("2_1udek")

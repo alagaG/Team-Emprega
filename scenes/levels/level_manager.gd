@@ -11,6 +11,7 @@ var current_level : Level
 
 
 func _process(delta: float) -> void:
+	if Engine.is_editor_hint(): return
 	if Input.is_key_pressed(KEY_ESCAPE):
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 	if Input.is_key_pressed(KEY_R):

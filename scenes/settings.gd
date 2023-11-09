@@ -12,15 +12,16 @@ func _ready() -> void:
 	sound_scroller.connect("drag_ended", _sound_value_changed)
 	full_screen_box.connect("toggled", _full_screen)
 	exit_btn.connect("button_down", _exit)
+	music_scroller.value = Global.music_volume
+	sound_scroller.value = Global.sound_volume
 
 
 func _music_value_changed(changed:bool) -> void:
-	var value = music_scroller.value
-	
+	Global.music_volume = music_scroller.value
 
 
 func _sound_value_changed(changed:bool) -> void:
-	var value = sound_scroller.value
+	Global.sound_volume = sound_scroller.value
 
 
 func _full_screen(state:bool) -> void:
